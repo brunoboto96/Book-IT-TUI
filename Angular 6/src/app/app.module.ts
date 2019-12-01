@@ -23,6 +23,8 @@ import {FileSelectDirective} from "ng2-file-upload";
 import { ProjectListComponent } from './project-list/project-list.component';
 import { PostsListComponent } from './cp/posts-list/posts-list.component';
 import { PostEditComponent } from './cp/post-edit/post-edit.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { ModuleDetailsComponent } from './cp/module-details/module-details.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { PostEditComponent } from './cp/post-edit/post-edit.component';
     ProjectListComponent,
     PostsListComponent,
     PostEditComponent,
+    TopBarComponent,
+    ModuleDetailsComponent,
   ],
   imports: [
     BrowserModule,

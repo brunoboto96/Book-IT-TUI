@@ -1,0 +1,44 @@
+<div *ngIf="moduleList" class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">{{ moduleList[0].name }}</div>
+    <div class="list-group list-group-flush">
+      <a href="#" class="list-group-item list-group-item-action bg-light">Announcements</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Unit Information</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Guided Learning</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Assessment & Feedback</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Teaching Team</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+
+
+    <div class="container-fluid">
+      <h1 class="mt-4">Here you can find all information you need to know about Subject A </h1>
+      <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
+        larger screens. When toggled using the button below, the menu will change.</p>
+      <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional,
+        and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the
+        menu when clicked.</p>
+      <p>The standard Lorem Ipsum passage, used since the 1500s. "Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script>
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

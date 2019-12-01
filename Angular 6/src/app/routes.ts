@@ -9,9 +9,10 @@ import { CpComponent } from './cp/cp.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { PostsListComponent } from './cp/posts-list/posts-list.component';
 import { PostEditComponent } from './cp/post-edit/post-edit.component';
+import { ModuleDetailsComponent } from './cp/module-details/module-details.component';
 
 export const appRoutes: Routes = [
-    {
+    /*{
         path: 'admin/signup', component: UserComponent,
         children: [{ path: '', component: SignUpComponent }]
     },
@@ -41,8 +42,28 @@ export const appRoutes: Routes = [
     /*{
         path: '', redirectTo: 'admin/login', pathMatch: 'full'
     },*/
+
     {
         path: '', component: ProjectListComponent
-    }
-    
+    },
+    {
+        path: 'session', component: UserComponent,
+        children: [{ path: '', component: SignInComponent }]
+    },
+    {
+        path: 'signup', component: UserComponent,
+        children: [{ path: '', component: SignUpComponent }]
+    },
+    {
+        path: 'login', component: UserComponent,
+        children: [{ path: '', component: SignInComponent }]
+    },
+    {
+        path: 'userprofile', component: CpComponent,canActivate:[AuthGuard],
+        children: [{ path: '', component: UserProfileComponent }]
+    },
+    {
+        path: 'module/:name', component: CpComponent,canActivate:[AuthGuard],
+        children: [{ path: '', component: ModuleDetailsComponent}]
+    },
 ];

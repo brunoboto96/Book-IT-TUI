@@ -5,6 +5,7 @@ import { HttpHeaders, HttpClient, HttpEventType } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UserService } from './user.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +17,7 @@ export class PostService {
 	};
 	noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient, private user: UserService) { }
 
 	//HttpMethods
 
@@ -31,27 +32,28 @@ export class PostService {
 	getPost() {
 		return this.http.get(environment.apiBaseUrl + '/posts', this.noAuthHeader);
 	}
-	
-	getPostById(id)
-	{
+
+	getPostById(id) {
 		return this.http.get(environment.apiBaseUrl + '/posts/' + id, this.noAuthHeader);
 	}
 
-	deletePost(id) {		
+	deletePost(id) {
 		return this.http.get(environment.apiBaseUrl + '/admin/cp/posts/delete/' + id, this.noAuthHeader);
 	}
-/*
-	setPost(data: FormData): Observable<any> {
-		return this.http.post(environment.apiBaseUrl + '/admin/cp/posts', data);
-	}
-*/
+	/*
+		setPost(data: FormData): Observable<any> {
+			return this.http.post(environment.apiBaseUrl + '/admin/cp/posts', data);
+		}
+	*/
 
 	//Helper Methods
 
 	uploadFile(data: FormData): Observable<any> {
-		return this.http.post(environment.apiBaseUrl + '/admin/cp/upload', data, this.noAuthHeader); 
+		return this.http.post(environment.apiBaseUrl + '/admin/cp/upload', data, this.noAuthHeader);
 	}
 
-
+	addModule(data: FormData): Observable<any> {
+		return this.http.post(environment.apiBaseUrl + '/addmodule', data, this.noAuthHeader);
+	}
 
 }

@@ -4,6 +4,8 @@ const router = express.Router();
 const ctrlUser = require('../controllers/user.controller');
 const ctrlPost = require('../controllers/post.controller');
 const ctrlUpload = require('../controllers/fileUpload.controller');
+const ctrlModule = require('../controllers/module.controller');
+
 
 //require multer for the file uploads
 var multer = require('multer');
@@ -44,9 +46,9 @@ var upload = multer({
 
 const jwtHelper = require('../config/jwtHelper');
 
-router.post('/admin/register', ctrlUser.register);
-router.post('/admin/authenticate', ctrlUser.authenticate);
-router.get('/admin/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
+router.post('/register', ctrlUser.register);
+router.post('/authenticate', ctrlUser.authenticate);
+router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 
 router.post('/admin/cp/post', ctrlPost.newPost);
 router.post('/admin/cp/posts/edit/:id', ctrlPost.editPostById);
@@ -58,6 +60,10 @@ router.post('/admin/cp/upload', upload, ctrlUpload.uploadFile);
 router.get('/admin/cp/mediafiles/delete/:id', ctrlUpload.deleteMediaById);
 router.get('/mediafiles', ctrlUpload.findMedia);
 router.get('/mediafiles/:id', ctrlUpload.findMediaByPostId);
+
+router.post('/addmodule', ctrlModule.addModule);
+router.get('/module/find/userid/:userId', ctrlModule.existingModules);
+router.get('/module/find/name/:name', ctrlModule.findByName);
 
 
 

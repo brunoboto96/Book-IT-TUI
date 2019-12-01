@@ -17,6 +17,7 @@ export class ProjectListComponent implements OnInit {
 	constructor(private posts: PostService, private media: MediaService, ) { }
 
 	ngOnInit() {
+		
 		this.url = environment.backendBaseUrl;
 		this.posts.getPost().subscribe(
 			res => {

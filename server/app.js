@@ -13,6 +13,8 @@ var app = express();
 
 // middleware
 app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
