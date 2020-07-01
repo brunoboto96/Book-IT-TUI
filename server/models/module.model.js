@@ -5,7 +5,7 @@ var moduleSchema = new mongoose.Schema({
     name: {
         type: String,
         required: 'Module name can\'t be empty',
-        unique: true
+        unique: false
     },
     description: {
         type: String,

@@ -18,6 +18,7 @@ export class UserProfileComponent implements OnInit {
 	showSucessMessage: boolean;
 	serverErrorMessages: string;
 	modules = modules;
+	successMessage = "Module added succesfully!"
 	// uploadForm: FormGroup;
 	user;
 	addedModules;
@@ -33,7 +34,7 @@ export class UserProfileComponent implements OnInit {
 		this.postService.addModule(form.value).toPromise().then(
 			res => {
 				this.showSucessMessage = true;
-				const source = timer(4000);
+				const source = timer(1000);
 				source.subscribe(val => {
 					this.resetForm(form)
 					console.log("module added");
@@ -54,8 +55,8 @@ export class UserProfileComponent implements OnInit {
 	resetForm(form: NgForm) {
 
 		this.showSucessMessage = false;
-		form.resetForm();
 		this.serverErrorMessages = '';
+		window.location.reload();
 	}
 	ngOnInit() {
 		this.user = this.userService.getUserPayload()['_id']

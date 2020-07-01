@@ -1,14 +1,22 @@
+<div class="alert-success text-center" *ngIf="showSucessMessage">
+    {{ successMessage }}
+</div>
+
+<!-- Error message -->
+<div class="alert alert-danger text-center" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+</div>
+
 <div class="container my-4">
     <div class="row mx-auto">
         <div class="col-4 card bg-info">
             <div class="card-body">
                 <h5 class="card-title">Register a module</h5>
-                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>-->
 
                 <form #newModuleForm="ngForm" (ngSubmit)="onSubmit(newModuleForm)">
                     <select class="form-control form-control-lg" name="name" #name="ngModel" ngModel>
-                            <option *ngFor="let m of modulesList">{{ m.name }}</option>
+                        <option value=""></option>
+                        <option *ngFor="let m of modulesList">{{ m.name }}</option>
                     </select>
                     <button type="submit" class="btn btn-success mt-1">Add</button>
 

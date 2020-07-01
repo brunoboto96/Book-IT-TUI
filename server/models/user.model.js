@@ -11,12 +11,7 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: 'Email can\'t be empty',
         unique: true
-    },
-    type: {
-        type: String,
-        required: 'type can\'t be empty'
-    },
-
+    },  
     password: {
         type: String,
         required: 'Password can\'t be empty',

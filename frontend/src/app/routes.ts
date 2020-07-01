@@ -10,6 +10,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { PostsListComponent } from './cp/posts-list/posts-list.component';
 import { PostEditComponent } from './cp/post-edit/post-edit.component';
 import { ModuleDetailsComponent } from './cp/module-details/module-details.component';
+import { InfoComponent } from './info/info.component';
 
 export const appRoutes: Routes = [
     /*{
@@ -45,6 +46,9 @@ export const appRoutes: Routes = [
 
     {
         path: '', component: ProjectListComponent
+    },
+    {
+        path: 'info', component: InfoComponent
     },
     {
         path: 'session', component: UserComponent,

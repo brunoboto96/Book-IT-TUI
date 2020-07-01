@@ -5,6 +5,7 @@ const _ = require('lodash');
 const Module = mongoose.model('Module');
 
 module.exports.addModule = (req, res, next) => {
+    console.log(req.body)
     var module = new Module();
     module.name = req.body.name;
     module.description = req.body.description;
@@ -15,8 +16,10 @@ module.exports.addModule = (req, res, next) => {
             return res.status(200).json({ modules: doc });
 
         } else {
-            if (err.code == 11000)
-                res.status(422).send(['ERROR.']);
+            if (err.code == 11000) {
+                console.log(err)
+                res.status(422).send(['It was not possible to add the module.']);
+            }
             else
                 return next(err);
         }

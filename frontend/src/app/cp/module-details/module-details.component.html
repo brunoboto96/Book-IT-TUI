@@ -1,0 +1,38 @@
+<div *ngIf="moduleList" class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">{{ moduleList[0].name }}</div>
+    <div class="list-group list-group-flush">
+      <a class="list-group-item list-group-item-action bg-light">Announcements</a>
+      <a class="list-group-item list-group-item-action bg-light">Unit Information</a>
+      <a class="list-group-item list-group-item-action bg-light">Guided Learning</a>
+      <a class="list-group-item list-group-item-action bg-light">Assessment & Feedback</a>
+      <a class="list-group-item list-group-item-action bg-light">Teaching Team</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+
+
+    <div class="container-fluid">
+      <h1 class="mt-4">{{ moduleList[0].name }}</h1>
+      <hr>
+      <h4>Here you can find all information you need:</h4>
+      <p>{{ moduleList[0].description }}</p>
+
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script>
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

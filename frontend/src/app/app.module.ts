@@ -25,6 +25,7 @@ import { PostsListComponent } from './cp/posts-list/posts-list.component';
 import { PostEditComponent } from './cp/post-edit/post-edit.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ModuleDetailsComponent } from './cp/module-details/module-details.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ModuleDetailsComponent } from './cp/module-details/module-details.compo
     PostEditComponent,
     TopBarComponent,
     ModuleDetailsComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,
